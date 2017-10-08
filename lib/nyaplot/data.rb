@@ -102,8 +102,7 @@ module Nyaplot
 
     # Access column using its label
     def column(name)
-      id = name.is_a?(Symbol) ? name : name.to_sym
-      column = @rows.map{|row| row[id]}
+      column = @rows.map{ |row| row[name] }
       return Series.new(name, column)
     end
 
